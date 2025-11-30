@@ -13,15 +13,16 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
 ]
 license = "Apache-2.0"
 license-files = ["LICENSE"]
 keywords = ["graphics", "simulation"]
 dynamic = ["version"]
 readme = "README.md"
-requires-python = ">=3.10,<3.14"
+requires-python = ">=3.10"
 dependencies = [
-    "numpy>=1.26.0",
+    "numpy>=2.3.5",
     "colorama",
     "dill",
     "pydantic>=2.0.0",  # rewrite of 1.10 from scratch
@@ -86,7 +87,7 @@ test = [
     "pytest-rerunfailures<16.0",
     "pytest-cov",
     "pytest-retry",
-    "numpy>=2.0.0",  # otherwise, on windows, tries to install 1.26.4, which has no wheel for python 3.13
+    "numpy>=2.3.5",  # otherwise, on windows, tries to install 1.26.4, which has no wheel for python 3.13
     "psutil",
     "autograd",
     "requests",
@@ -107,7 +108,7 @@ Homepage = "https://github.com/Genesis-Embodied-AI/gstaichi"
 requires = [
     "setuptools>=77.0.0",
     "wheel",
-    "numpy>=2.0.0",
+    "numpy>=2.3.5",
     "pybind11<3.0.0",
     "pybind11-stubgen",
     "cmake>=3.11",
