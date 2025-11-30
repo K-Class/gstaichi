@@ -24,7 +24,7 @@ jobs:
       cancel-in-progress: ${{ github.event_name != 'release' }}
     strategy:
       matrix:
-        PYTHON_CP_VERSION: ['cp310', 'cp311', 'cp312', 'cp313']
+        PYTHON_CP_VERSION: ['cp310', 'cp311', 'cp312', 'cp313', 'cp314']
         os: ['ubuntu-22.04', 'ubuntu-22.04-arm']
       fail-fast: false
     steps:
@@ -36,7 +36,7 @@ jobs:
           df -h
           pushd /opt/python
           rm -Rf cp39-cp39 cp314-cp314 cp314-cp314t cp38-cp38 cp313-cp313t pp310-pypy310_pp73 pp311-pypy311_pp73
-          for cpversion in cp310 cp311 cp312 cp313; do {
+          for cpversion in cp310 cp311 cp312 cp313 cp314; do {
             if [[ "${cpversion}" != "${{ matrix.PYTHON_CP_VERSION }}" ]]; then
               rm -Rf ${cpversion}-${cpversion}
             fi
@@ -77,7 +77,7 @@ jobs:
       cancel-in-progress: ${{ github.event_name != 'release' }}
     strategy:
       matrix:
-        PYTHON_VERSION: ['3.10', '3.11', '3.12', '3.13']
+        PYTHON_VERSION: ['3.10', '3.11', '3.12', '3.13', '3.14']
         os: ['ubuntu-22.04', 'ubuntu-22.04-arm']
       fail-fast: false
     steps:
@@ -131,7 +131,7 @@ jobs:
       cancel-in-progress: true
     strategy:
       matrix:
-        PYTHON_CP_VERSION: ["cp310", "cp311", "cp312", "cp313"]
+        PYTHON_CP_VERSION: ["cp310", "cp311", "cp312", "cp313", "cp314"]
         os: ['ubuntu-22.04', 'ubuntu-22.04-arm']
       fail-fast: false
     with:
